@@ -4,7 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## System Architecture
 
-This is a persistent ping system for Wear OS devices with three main components:
+This is a persistent ping system for Wear OS devices evolving into an ML platform with these main components:
+
+### 🚨 CRITICAL ARCHITECTURAL DECISION
+**Frontend must use React + Shadcn/ui for all UI components**
+- Issues #77-78 establish this foundation
+- All future dashboard, analytics, and ML interfaces will use Shadcn/ui
+- This enables consistent, professional design across the entire platform
 
 ### Backend (server/)
 - **Flask API** (`app.py`) with single `/ping` endpoint that receives device pings
@@ -128,6 +134,7 @@ This section ensures future AI agents can quickly understand project status and 
 - **Repository**: https://github.com/smithandrewk/ping-system
 - **Active Sprint**: Sprint 1 - Foundation & Quick Wins
 - **Current Phase**: Phase 1 (Issues #1-32) - Foundation & Observability
+- **CRITICAL**: Must migrate to React + Shadcn/ui for design system (Issues #77-78)
 
 ### Quick Context Commands for New Agents
 
@@ -210,12 +217,15 @@ git commit -m "[Component]: [Brief description] for Issue #[NUMBER]
 
 ### Sprint Planning Overview
 
-#### Sprint 1: Foundation & Quick Wins (Issues #1, #5, #7, #9)
-**Goal**: Get immediate value and system observability
-- **#1**: Basic web dashboard ⚡ Quick Win
+#### Sprint 1: Foundation & Quick Wins (Issues #78, #77, #5, #7, #9)
+**Goal**: Get immediate value and establish design system foundation
+- **#78**: Set up React + Shadcn/ui design system foundation 🚨 CRITICAL
+- **#77**: Migrate dashboard to React + Shadcn/ui frontend 🚨 CRITICAL
 - **#5**: Server metrics endpoint ⚡ Quick Win  
 - **#7**: Database cleanup job ⚡ Quick Win
 - **#9**: Device registration with metadata
+
+**NOTE**: Issues #78 and #77 must be completed first to establish the design system foundation that all future frontend work will build upon.
 
 #### Sprint 2: Device Management (Issues #2, #3, #10)
 **Goal**: Polish dashboard and add device-specific features
