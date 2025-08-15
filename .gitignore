@@ -1,0 +1,40 @@
+# Server
+server/.env
+server/__pycache__/
+server/*.pyc
+server/venv/
+server/logs/
+
+# Android
+ping/.gradle/
+ping/build/
+ping/app/build/
+ping/local.properties
+ping/*.iml
+ping/.idea/
+
+# Database
+database/*.log
+database/backup/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

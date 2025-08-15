@@ -1,0 +1,17 @@
+[Unit]
+Description=Ping Server for Wear OS Devices
+After=network.target mysql.service
+
+[Service]
+Type=exec
+User=ping-server
+Group=ping-server
+WorkingDirectory=/opt/ping-server
+Environment=PATH=/opt/ping-server/venv/bin
+ExecStart=/opt/ping-server/venv/bin/gunicorn --bind 0.0.0.0:5000 --workers 2 app:app
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
